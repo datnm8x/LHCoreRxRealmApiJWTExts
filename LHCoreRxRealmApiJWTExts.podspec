@@ -29,7 +29,7 @@ s.source           = { :git => 'https://github.com/laohac8x/LHCoreRxRealmApiJWTE
 
 s.ios.deployment_target = '9.0'
 s.swift_version = '5.0'
-s.source_files = 'Source/*.swift', 'LHCoreRxApiJWTExts/Source/*.swift'
+s.source_files = 'Source/*.swift', 'LHCoreRxApiJWTExts/Source/*.swift', 'LHCoreRxApiJWTExts/LHSwiftJWT/Source/*.swift'
 
 # s.resource_bundles = {
 #   'LHCoreRxRealmApiJWTExts' => ['LHCoreRxRealmApiJWTExts/Assets/*.png']
@@ -42,7 +42,6 @@ s.dependency 'RxSwift', '~> 5'
 s.dependency 'RxCocoa', '~> 5'
 s.dependency 'RealmSwift', '~> 3'
 s.dependency 'RxRealm', '~> 1'
-s.dependency 'JSONWebToken', :git => 'https://github.com/laohac8x/JSONWebToken.git', :inhibit_warnings => true
 
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'

@@ -14,8 +14,7 @@ target 'LHCoreRxRealmApiJWTExts iOS' do
   pod 'RxCocoa'
   pod 'RealmSwift'
   pod 'RxRealm'
-  pod 'JSONWebToken', :git => 'https://github.com/laohac8x/JSONWebToken.git', :inhibit_warnings => true
-  
+
   target 'LHCoreRxRealmApiJWTExts iOS Tests' do
     inherit! :search_paths
     # Pods for testing
