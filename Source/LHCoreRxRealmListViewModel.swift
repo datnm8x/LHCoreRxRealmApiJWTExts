@@ -13,13 +13,26 @@ import RxSwift
 import RealmSwift
 import RxCocoa
 
+public extension LHCoreApiDefault {
+    static var startId: Int64 = 0
+}
+
+public enum LHCoreApiPagingType {
+    case byPageNumber
+    case byItemId
+}
+
+open class LHCoreObject: Object {
+    open var itemId: Int64 { return -1 }
+}
+
 // MARK: LHCoreRxRealmListViewModel ================================
-open class LHCoreRxRealmListViewModel<T: Object> {
+open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
     public typealias TableCellBuilder = (_ item: T, _ tblView: UITableView, _ at: IndexPath) -> UITableViewCell?
     public typealias CollectionCellBuilder = (_ item: T, _ colView: UICollectionView, _ at: IndexPath) -> UICollectionViewCell?
     
-    public typealias RxFetchFunction = (_ page: Int,_ per: Int) -> Observable<LHCoreListModel.ResultState<T>>
-    public typealias RxSearchFunction = (_ keyword: String,_ page: Int,_ per: Int) -> Observable<LHCoreListModel.ResultState<T>>
+    public typealias RxFetchFunction = (_ pageOrId: Int64,_ per: Int) -> Observable<LHCoreListModel.ResultState<T>>
+    public typealias RxSearchFunction = (_ keyword: String,_ pageOrId: Int64,_ per: Int) -> Observable<LHCoreListModel.ResultState<T>>
     
     public let fetchFunction: RxFetchFunction
     public let searchFunction: RxSearchFunction?
@@ -34,15 +47,23 @@ open class LHCoreRxRealmListViewModel<T: Object> {
         }
     }
     
-    internal var startPage: Int = LHCoreApiDefault.startPage
-    internal var nextPage: Int = LHCoreApiDefault.startPage
+    internal var initialPage: Int64 = Int64(LHCoreApiDefault.startPage)
+    internal var nextPage: Int64 = Int64(LHCoreApiDefault.startPage)
+    
+    internal var initialItemId: Int64 = LHCoreApiDefault.startId
+    internal var nextItemId: Int64? = LHCoreApiDefault.startId
+    
     internal var pageSize: Int = LHCoreApiDefault.pageSize
+    
+    var pagingType: LHCoreApiPagingType = LHCoreApiPagingType.byPageNumber
+    
     public let requestState = BehaviorRelay<LHCoreListModel.RequestState>(value: .none)
     public let didRequestHandler = BehaviorRelay<(LHCoreListModel.RequestType, LHCoreListModel.ResultState<T>)>(value: (.refresh, LHCoreListModel.ResultState<T>.successInitial))
     
     public let disposeBag: DisposeBag = DisposeBag()
     internal var disposeBagFetch: DisposeBag?
     internal let userScrollAction = BehaviorRelay<Bool>(value: false)
+    internal var disposeBagBindDataSource: DisposeBag?
     internal var disposeBagAutoLoadMore: DisposeBag?
     internal weak var pListView: UIScrollView?
     
@@ -56,7 +77,14 @@ open class LHCoreRxRealmListViewModel<T: Object> {
         }
     }
     public var isRequesting: Bool { return disposeBagFetch != nil && requestState.value != .none }
-    internal var hasMoreData: Bool { return totalcount.value > resultCount }
+    internal var hasMoreData: Bool {
+        switch pagingType {
+        case .byItemId:
+            return nextItemId != nil
+        default:
+            return totalcount.value > resultCount
+        }
+    }
     
     internal var resultsNotificationToken: NotificationToken?
     public let resultsChange = BehaviorRelay<RealmCollectionChange<Results<T>>?>(value: nil)
@@ -66,31 +94,32 @@ open class LHCoreRxRealmListViewModel<T: Object> {
     internal var resultCount: Int { return realmResults.count }
     public let totalcount: BehaviorRelay<Int> = BehaviorRelay<Int>(value: Int.max)
     
-    public convenience init(fetchFunc: @escaping RxFetchFunction,
-                     startPage: Int = LHCoreApiDefault.startPage, pageSize: Int = LHCoreApiDefault.pageSize,
+    public convenience init(fetchFunc: @escaping RxFetchFunction, pagingType: LHCoreApiPagingType = .byPageNumber,
+                     initialPageOrId: Int64? = nil, pageSize: Int = LHCoreApiDefault.pageSize,
                      sortKey: String = "id", ascending: Bool = true,
                      filter: String? = nil, searchFunc: RxSearchFunction? = nil,
                      cellBuilder: @escaping TableCellBuilder)
     {
-        self.init(fetchFunc: fetchFunc, startPage: startPage, pageSize: pageSize,
+        self.init(fetchFunc: fetchFunc, pagingType: pagingType, initialPageOrId: initialPageOrId, pageSize: pageSize,
                   sortKey: sortKey, ascending: ascending, filter: filter, searchFunc: searchFunc,
                   tableCellBuilder: cellBuilder, collectionCellBuilder: nil)
         self.listType = .table
     }
     
-    public convenience init(fetchFunc: @escaping RxFetchFunction,
-                     startPage: Int = LHCoreApiDefault.startPage, pageSize: Int = LHCoreApiDefault.pageSize,
-                     sortKey: String = "id", ascending: Bool = true,
-                     filter: String? = nil, searchFunc: RxSearchFunction? = nil,
-                     collectionCellBuilder: @escaping CollectionCellBuilder)
+    public convenience init(fetchFunc: @escaping RxFetchFunction, pagingType: LHCoreApiPagingType = .byPageNumber,
+                            initialPageOrId: Int64? = nil, pageSize: Int = LHCoreApiDefault.pageSize,
+                            sortKey: String = "id", ascending: Bool = true,
+                            filter: String? = nil, searchFunc: RxSearchFunction? = nil,
+                            collectionCellBuilder: @escaping CollectionCellBuilder)
     {
-        self.init(fetchFunc: fetchFunc, startPage: startPage, pageSize: pageSize,
+        self.init(fetchFunc: fetchFunc, pagingType: pagingType, initialPageOrId: initialPageOrId, pageSize: pageSize,
                   sortKey: sortKey, ascending: ascending, filter: filter, searchFunc: searchFunc,
                   tableCellBuilder: nil, collectionCellBuilder: collectionCellBuilder)
         self.listType = .collection
     }
     
-    internal init(fetchFunc: @escaping RxFetchFunction, startPage: Int, pageSize: Int,
+    internal init(fetchFunc: @escaping RxFetchFunction, pagingType: LHCoreApiPagingType = .byPageNumber,
+                  initialPageOrId: Int64? = nil, pageSize: Int,
                   sortKey: String, ascending: Bool, filter: String?, searchFunc: RxSearchFunction?,
                   tableCellBuilder: TableCellBuilder?, collectionCellBuilder: CollectionCellBuilder?) {
         MainScheduler.ensureExecutingOnScheduler()
@@ -98,8 +127,10 @@ open class LHCoreRxRealmListViewModel<T: Object> {
         self.realmParams.ascending = ascending
         self.realmParams.filter = filter
         self.realmParams.sortKey = sortKey
+        self.pagingType = pagingType
         
-        self.startPage = startPage
+        self.initialPage = initialPageOrId ?? Int64(LHCoreApiDefault.startPage)
+        self.initialItemId = initialPageOrId ?? LHCoreApiDefault.startId
         self.pageSize = pageSize
         self.fetchFunction = fetchFunc
         self.searchFunction = searchFunc
@@ -112,7 +143,9 @@ open class LHCoreRxRealmListViewModel<T: Object> {
             let countResult = rlmResult.count
             self.totalcount.accept(countResult)
             
-            nextPage = Int(countResult / pageSize) + startPage
+            nextPage = Int64(countResult / pageSize) + initialPage
+            nextItemId = initialItemId
+            
             self.realmResults = rlmResult
             // resultsNotification
             resultsNotificationToken = rlmResult.observe { [weak self] (rlmCollectionChange) in
@@ -133,6 +166,8 @@ open class LHCoreRxRealmListViewModel<T: Object> {
         self.pListView = tblView
         tblView.dataSource = self.dataSource
         tblView.reloadData()
+        let mDisposeBag = DisposeBag()
+        self.disposeBagBindDataSource = mDisposeBag
         
         resultsChange.asDriver().drive(onNext: { (realmChange) in
             guard let realmChanged = realmChange else { return }
@@ -149,9 +184,14 @@ open class LHCoreRxRealmListViewModel<T: Object> {
             case .error(_):
                 break
             }
-        }).disposed(by: disposeBag)
+        }).disposed(by: mDisposeBag)
         
         self.subcribeForAuToLoadMore()
+    }
+    
+    public func unBindDataSource() {
+        self.disposeBagBindDataSource = nil
+        self.disposeBagAutoLoadMore = nil
     }
     
     public func bindDataSource(collection: UICollectionView?) {
@@ -160,6 +200,8 @@ open class LHCoreRxRealmListViewModel<T: Object> {
         self.pListView = clView
         clView.dataSource = self.dataSource
         clView.reloadData()
+        let mDisposeBag = DisposeBag()
+        self.disposeBagBindDataSource = mDisposeBag
         
         resultsChange.asDriver().drive(onNext: { (realmChange) in
             guard let realmChanged = realmChange else { return }
@@ -176,7 +218,7 @@ open class LHCoreRxRealmListViewModel<T: Object> {
             case .error(_):
                 break
             }
-        }).disposed(by: disposeBag)
+        }).disposed(by: mDisposeBag)
         
         self.subcribeForAuToLoadMore()
     }
@@ -313,12 +355,23 @@ extension LHCoreRxRealmListViewModel {
             return
         }
         
+        if type == .fetch, self.nextItemId == nil {
+            self.didRequestHandler.accept((type, LHCoreListModel.ResultState<T>.error(NSError(domain: String(describing: self), code: LHCoreErrorCodes.noMoreData, userInfo: nil))))
+            return
+        }
+        
         let pDisposeBag = DisposeBag()
         disposeBagFetch = pDisposeBag
-        let requestPage = type == .refresh ? self.startPage : self.nextPage
+        
+        // proccess page index
+        var requestPageInfo = type == .refresh ? self.initialPage : self.nextPage
+        if pagingType == .byItemId {
+            requestPageInfo = type == .refresh ? self.initialItemId : (self.nextItemId ?? initialItemId)
+        }
+        
         self.requestState.accept(.requesting(type))
         
-        fetchFunction(requestPage, pageSize)
+        fetchFunction(requestPageInfo, pageSize)
             .subscribeOn(LHCoreRxAPIService.bkgScheduler)
             .map { [unowned self] result -> LHCoreListModel.ResultState<T> in
                 switch result {
@@ -346,9 +399,10 @@ extension LHCoreRxRealmListViewModel {
                     MainScheduler.ensureExecutingOnScheduler()
                     
                     switch result {
-                    case .success(_):
-                        if type == .refresh { self.nextPage = self.startPage }
+                    case .success(let listResult):
+                        if type == .refresh { self.nextPage = self.initialPage }
                         self.nextPage += 1
+                        self.nextItemId = listResult.items.count < self.pageSize ? nil : listResult.items.last?.itemId
                         
                     case .error(let error):
                         #if DEBUG
@@ -384,10 +438,14 @@ extension LHCoreRxRealmListViewModel {
         let pDisposeBag = DisposeBag()
         disposeBagFetch = pDisposeBag
         
-        let nextPage = type == .fetch ? self.nextPage : startPage
+        var requestPageInfo = type == .refresh ? self.initialPage : self.nextPage
+        if pagingType == .byItemId {
+            requestPageInfo = type == .refresh ? self.initialItemId : (self.nextItemId ?? initialItemId)
+        }
+        
         requestState.accept(.requesting(type))
         
-        self.searchFunction?(self.searchKeyword, nextPage, pageSize)
+        self.searchFunction?(self.searchKeyword, requestPageInfo, pageSize)
             .subscribeOn(LHCoreRxAPIService.bkgScheduler)
             .map { [unowned self] result -> LHCoreListModel.ResultState<T> in
                 if !self.isSearchMode {
@@ -419,9 +477,11 @@ extension LHCoreRxRealmListViewModel {
                     MainScheduler.ensureExecutingOnScheduler()
                     
                     switch result {
-                    case .success(_):
-                        if type == .refresh { self.nextPage = self.startPage }
+                    case .success(let listResult):
+                        if type == .refresh { self.nextPage = self.initialPage }
                         self.nextPage += 1
+                        self.nextItemId = listResult.items.count < self.pageSize ? nil : listResult.items.last?.itemId
+                        
                         #if DEBUG
                         print("\(self)->search->success")
                         #endif
