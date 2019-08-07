@@ -42,22 +42,36 @@ public struct LHCoreDetailModel {
     }
 }
 
-public protocol LHCoreRxRealmFindItemById {
-    associatedtype T: Object
-    static func findItemById(id: Int64) -> Observable<LHCoreDetailModel.StateResult<T>>
-    static func fetch(id: Int64) -> Observable<T>
-}
-
-public protocol LHCoreRxRealmFindItemByIdAndOptions {
-    associatedtype Item: Object
-    associatedtype Options: Any
+public enum ObjectPrimaryKey {
+    case int64(Int64)
+    case string(String)
     
-    static func fetchWithOptions(id: Int64) -> Observable<(Item, Options?)>
+    public var int64Value: Int64 {
+        switch self {
+        case .int64(let idValue): return idValue
+        case .string(_): return -1
+        }
+    }
+    
+    public var stringValue: String {
+        switch self {
+        case .int64(_): return "-1"
+        case .string(let idValue): return idValue
+        }
+    }
 }
 
-open class LHCoreRxRealmDetailViewModel<T: LHCoreRxRealmFindItemById> {
-    public let itemId: Int64
+// type: for model with many categories, you can filter than easier
+public protocol LHCoreRxRealmFindItemByPrimaryKey {
+    associatedtype T: Object
+    static func findItemByPrimaryKey(_ primaryKey: ObjectPrimaryKey, modelOption: Int) -> Observable<LHCoreDetailModel.StateResult<T>>
+    static func fetchWithPrimaryKey(_ itemPrimaryKey: ObjectPrimaryKey, modelOption: Int) -> Observable<T>
+}
+
+open class LHCoreRxRealmDetailViewModel<T: LHCoreRxRealmFindItemByPrimaryKey> {
+    public let itemPrimaryKey: ObjectPrimaryKey
     fileprivate var mItem: T? = nil
+    fileprivate var modelOption: Int = 0
     
     public let disposeBag = DisposeBag()
     public let state = BehaviorRelay<LHCoreDetailModel.State>(value: .ideal)
@@ -70,11 +84,34 @@ open class LHCoreRxRealmDetailViewModel<T: LHCoreRxRealmFindItemById> {
     var currentError: NSError?
     public var item: T? { return self.mItem }
     
-    public init(id: Int64) {
+    public init(itemPrimaryKey: ObjectPrimaryKey, modelOption: Int = 0) {
         assert(Thread.isMainThread)
         
-        self.itemId = id
+        self.itemPrimaryKey = itemPrimaryKey
+        self.modelOption = modelOption
         
+        commonInit()
+    }
+    
+    public init(id: Int64, modelOption: Int = 0) {
+        assert(Thread.isMainThread)
+        
+        self.itemPrimaryKey = ObjectPrimaryKey.int64(id)
+        self.modelOption = modelOption
+        
+        commonInit()
+    }
+    
+    public init(primaryKey: String, modelOption: Int = 0) {
+        assert(Thread.isMainThread)
+        
+        self.itemPrimaryKey = ObjectPrimaryKey.string(primaryKey)
+        self.modelOption = modelOption
+        
+        commonInit()
+    }
+    
+    internal func commonInit() {
         indicatorViewHidden = state.asObservable().map { [unowned self] state -> Bool in
             switch state {
             case .requesting where self.item == nil: return false
@@ -101,19 +138,35 @@ open class LHCoreRxRealmDetailViewModel<T: LHCoreRxRealmFindItemById> {
             }
             .distinctUntilChanged()
         
-        Realm.observableObject(T.T.self, forId: self.itemId).subscribe(onNext: { [weak self] (objects, realmChangeset) in
+        switch itemPrimaryKey {
+        case .int64(let idValue):
+            Realm.observableObject(T.T.self, forId: idValue).subscribe(onNext: { [weak self] (objects, realmChangeset) in
+                guard let realmChangeset = realmChangeset else { return }
+                
+                if realmChangeset.deleted.count > 0 || realmChangeset.inserted.count > 0 || realmChangeset.updated.count > 0 {
+                    // it's an update
+                    self?.mItem = objects.first as? T
+                    self?.state.accept(.ideal)
+                }
+            }).disposed(by: self.disposeBag)
             
-            if realmChangeset != nil {
-                // it's an update
-                self?.mItem = objects.first as? T
-            }
-        }).disposed(by: self.disposeBag)
+        case .string(let idValue):
+            Realm.observableObject(T.T.self, forIdString: idValue).subscribe(onNext: { [weak self] (objects, realmChangeset) in
+                guard let realmChangeset = realmChangeset else { return }
+                
+                if realmChangeset.deleted.count > 0 || realmChangeset.inserted.count > 0 || realmChangeset.updated.count > 0 {
+                    // it's an update
+                    self?.mItem = objects.first as? T
+                    self?.state.accept(.ideal)
+                }
+            }).disposed(by: self.disposeBag)
+        }
     }
     
     public func fetch(completion: ((NSError?) -> Void)? = nil) {
         assert(Thread.isMainThread)
         
-        T.findItemById(id: itemId).subscribe(
+        T.findItemByPrimaryKey(itemPrimaryKey, modelOption: self.modelOption).subscribe(
             onNext: { [weak self] result in
                 MainScheduler.ensureExecutingOnScheduler()
                 
@@ -157,21 +210,31 @@ open class LHCoreRxRealmDetailViewModel<T: LHCoreRxRealmFindItemById> {
     }
 }
 
-public extension LHCoreRxRealmFindItemById where Self: Object {
-    static func findItemById(id: Int64) -> Observable<LHCoreDetailModel.StateResult<Self>> {
+public extension LHCoreRxRealmFindItemByPrimaryKey where Self: Object {
+    static func findItemByPrimaryKey(_ primaryKey: ObjectPrimaryKey, modelOption: Int) -> Observable<LHCoreDetailModel.StateResult<Self>> {
         return Observable.create({ (observable: AnyObserver<LHCoreDetailModel.StateResult<Self>>) -> Disposable in
             // Get Local data
             if let realm = Realm.tryInstance {
-                if let item = realm.object(ofType: Self.self, forPrimaryKey: NSNumber(value: id)) {
-                    assert(Thread.isMainThread)
-                    observable.onNext(.ideal(item))
+                switch primaryKey {
+                case .int64(let idValue):
+                    if let item = realm.object(ofType: Self.self, forPrimaryKey: NSNumber(value: idValue)) {
+                        assert(Thread.isMainThread)
+                        observable.onNext(.ideal(item))
+                    }
+                    
+                case .string(let idValue):
+                    if let item = realm.object(ofType: Self.self, forPrimaryKey: idValue) {
+                        assert(Thread.isMainThread)
+                        observable.onNext(.ideal(item))
+                    }
                 }
+                
                 observable.onNext(.requesting)
             } else {
                 observable.onNext(.requesting)
             }
             
-            return fetch(id: id).observeOn(MainScheduler.instance).subscribe(
+            return self.fetchWithPrimaryKey(primaryKey, modelOption: modelOption).observeOn(MainScheduler.instance).subscribe(
                 onNext: { _ in
                     MainScheduler.ensureExecutingOnScheduler()
                     
@@ -179,13 +242,26 @@ public extension LHCoreRxRealmFindItemById where Self: Object {
                         let realm = try Realm()
                         realm.refresh()
                         
-                        if let item = realm.object(ofType: Self.self, forPrimaryKey: NSNumber(value: id)) {
-                            observable.onNext(.ideal(item))
-                            observable.onCompleted()
-                        } else {
-                            // FXIME: empty data, not found
-                            observable.onNext(.ideal(nil))
-                            observable.onCompleted()
+                        switch primaryKey {
+                        case .int64(let idValue):
+                            if let item = realm.object(ofType: Self.self, forPrimaryKey: NSNumber(value: idValue)) {
+                                observable.onNext(.ideal(item))
+                                observable.onCompleted()
+                            } else {
+                                // FXIME: empty data, not found
+                                observable.onNext(.ideal(nil))
+                                observable.onCompleted()
+                            }
+                            
+                        case .string(let idValue):
+                            if let item = realm.object(ofType: Self.self, forPrimaryKey: idValue) {
+                                observable.onNext(.ideal(item))
+                                observable.onCompleted()
+                            } else {
+                                // FXIME: empty data, not found
+                                observable.onNext(.ideal(nil))
+                                observable.onCompleted()
+                            }
                         }
                     } catch let error {
                         observable.onError(error)
