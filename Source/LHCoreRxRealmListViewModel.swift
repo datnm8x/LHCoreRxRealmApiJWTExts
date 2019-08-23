@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-import RxSwift
 import RealmSwift
+import Unrealm
 import RxCocoa
+import RxSwift
 
-open class LHCoreObject: Object {
-    open var itemId: Int64 { return LHCoreApiDefault.nonItemId }
+public protocol LHCoreRealmable: Realmable {
+    var itemId: Int64 { get set }
 }
 
 public struct LHCoreRxRealmListOption {
@@ -37,7 +38,7 @@ public struct LHCoreRxRealmListOption {
 }
 
 // MARK: LHCoreRxRealmListViewModel ================================
-open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
+open class LHCoreRxRealmListViewModel<T: LHCoreRealmable> {
     public typealias TableCellBuilder = (_ item: T, _ tblView: UITableView, _ at: IndexPath) -> UITableViewCell?
     public typealias CollectionCellBuilder = (_ item: T, _ colView: UICollectionView, _ at: IndexPath) -> UICollectionViewCell?
     
@@ -65,12 +66,12 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
     internal var searchKeyword: String = ""
     
     public var isRequesting: Bool { return disposeBagFetch != nil && requestState.value != .none }
-    internal var resultsNotificationToken: NotificationToken?
-    public let resultsChange = BehaviorRelay<RealmCollectionChange<Results<T>>?>(value: nil)
+    internal var resultNotificationToken: NotificationToken?
+    public let resultsChange = BehaviorRelay<RealmCollectionChange<Unrealm.Results<T>>?>(value: nil)
     internal var realmParams: (sortBy: [SortDescriptor], filter: String?) = (sortBy: [SortDescriptor(keyPath: "id")], filter: nil)
-    internal var realmResults: Results<T>
-    public var items: Results<T> { return realmResults }
-    internal var resultCount: Int { return realmResults.count }
+    internal var result: Unrealm.Results<T>
+    public var items: Unrealm.Results<T> { return result }
+    internal var resultCount: Int { return result.count }
     public let totalcount: BehaviorRelay<Int> = BehaviorRelay<Int>(value: Int.max)
     
     open var layoutType: LHCoreListModel.LayoutType = .one_section {
@@ -134,9 +135,9 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
             pagingParam.lastItem = nil
             pagingParam.lastItemId = 0
             
-            self.realmResults = rlmResult
-            // resultsNotification
-            resultsNotificationToken = rlmResult.observe { [weak self] (rlmCollectionChange) in
+            self.result = rlmResult
+            // resultNotification
+            resultNotificationToken = self.result.observe { [weak self] (rlmCollectionChange) in
                 self?.resultsChange.accept(rlmCollectionChange)
             }
         } catch let error {
@@ -287,14 +288,14 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
     }
     
     deinit {
-        resultsNotificationToken?.invalidate()
+        resultNotificationToken?.invalidate()
     }
 }
 
 public extension LHCoreRxRealmListViewModel {
     func item(atIndex: Int?) -> T? {
         guard let mIndex = atIndex else { return nil }
-        return mIndex >= realmResults.count ? nil : realmResults[mIndex]
+        return mIndex >= result.count ? nil : result[mIndex]
     }
     
     func item(at: IndexPath?) -> T? {
@@ -415,12 +416,13 @@ extension LHCoreRxRealmListViewModel {
                             let newItemIds = listResult.items.map({ (item) -> Int64 in
                                 return item.itemId
                             })
-                            let oldObjects = (self.realmParams.filter == nil ? realm.objects(T.self) : realm.objects(T.self).filter(self.realmParams.filter!)).toArray().filter({ (item) -> Bool in
+                            if let oldObjects = (self.realmParams.filter == nil ? realm.objects(T.self) : realm.objects(T.self).filter(self.realmParams.filter!)).array?.filter({ (item) -> Bool in
                                 return newItemIds.contains(item.itemId) == false && item.itemId != LHCoreApiDefault.nonItemId
-                            })
-                            realm.delete(oldObjects)
+                            }) {
+                                realm.delete(oldObjects)
+                            }
                         }
-                        realm.add(listResult.items, update: Realm.UpdatePolicy.all)
+                        realm.add(listResult.items, update: true)
                     })
                     self.totalcount.accept(listResult.totalcount)
                     

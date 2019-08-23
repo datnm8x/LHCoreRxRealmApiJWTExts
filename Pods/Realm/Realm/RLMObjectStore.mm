@@ -112,17 +112,9 @@ void RLMInitializeSwiftAccessorGenerics(__unsafe_unretained RLMObjectBase *const
     }
 }
 
-void RLMVerifyHasPrimaryKey(Class cls) {
-    RLMObjectSchema *schema = [cls sharedSchema];
-    if (!schema.primaryKeyProperty) {
-        NSString *reason = [NSString stringWithFormat:@"'%@' does not have a primary key and can not be updated", schema.className];
-        @throw [NSException exceptionWithName:@"RLMException" reason:reason userInfo:nil];
-    }
-}
-
 void RLMAddObjectToRealm(__unsafe_unretained RLMObjectBase *const object,
                          __unsafe_unretained RLMRealm *const realm,
-                         RLMUpdatePolicy updatePolicy) {
+                         bool createOrUpdate) {
     RLMVerifyInWriteTransaction(realm);
 
     // verify that object is unmanaged
@@ -148,9 +140,7 @@ void RLMAddObjectToRealm(__unsafe_unretained RLMObjectBase *const object,
     object->_objectSchema = info.rlmObjectSchema;
     try {
         realm::Object::create(c, realm->_realm, *info.objectSchema, (id)object,
-                              updatePolicy != RLMUpdatePolicyError,
-                              updatePolicy == RLMUpdatePolicyUpdateChanged,
-                              -1, &object->_row);
+                              createOrUpdate, /* diff */ false, -1, &object->_row);
     }
     catch (std::exception const& e) {
         @throw RLMException(e);
@@ -160,10 +150,10 @@ void RLMAddObjectToRealm(__unsafe_unretained RLMObjectBase *const object,
 }
 
 RLMObjectBase *RLMCreateObjectInRealmWithValue(RLMRealm *realm, NSString *className,
-                                               id value, RLMUpdatePolicy updatePolicy) {
+                                               id value, bool createOrUpdate = false) {
     RLMVerifyInWriteTransaction(realm);
 
-    if (updatePolicy != RLMUpdatePolicyError && RLMIsObjectSubclass([value class])) {
+    if (createOrUpdate && RLMIsObjectSubclass([value class])) {
         RLMObjectBase *obj = value;
         if (obj->_realm == realm && [obj->_objectSchema.className isEqualToString:className]) {
             // This is a no-op if value is an RLMObject of the same type already backed by the target realm.
@@ -186,8 +176,7 @@ RLMObjectBase *RLMCreateObjectInRealmWithValue(RLMRealm *realm, NSString *classN
     RLMObjectBase *object = RLMCreateManagedAccessor(info.rlmObjectSchema.accessorClass, realm, &info);
     try {
         object->_row = realm::Object::create(c, realm->_realm, *info.objectSchema,
-                                             (id)value, updatePolicy != RLMUpdatePolicyError,
-                                             updatePolicy == RLMUpdatePolicyUpdateChanged).row();
+                                             (id)value, createOrUpdate).row();
     }
     catch (std::exception const& e) {
         @throw RLMException(e);

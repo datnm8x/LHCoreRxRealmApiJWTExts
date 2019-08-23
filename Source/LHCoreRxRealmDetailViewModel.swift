@@ -63,7 +63,7 @@ public enum ObjectPrimaryKey {
 
 // type: for model with many categories, you can filter than easier
 public protocol LHCoreRxRealmFindItemByPrimaryKey {
-    associatedtype T: Object
+    associatedtype T: LHCoreRealmable
     static func findItemByPrimaryKey(_ primaryKey: ObjectPrimaryKey, modelOption: Int) -> Observable<LHCoreDetailModel.StateResult<T>>
     static func fetchWithPrimaryKey(_ itemPrimaryKey: ObjectPrimaryKey, modelOption: Int) -> Observable<T>
 }
@@ -138,29 +138,24 @@ open class LHCoreRxRealmDetailViewModel<T: LHCoreRxRealmFindItemByPrimaryKey> {
             }
             .distinctUntilChanged()
         
+        var itemPrimaryValue: Any?
         switch itemPrimaryKey {
-        case .int64(let idValue):
-            Realm.observableObject(T.T.self, forId: idValue).subscribe(onNext: { [weak self] (objects, realmChangeset) in
-                guard let realmChangeset = realmChangeset else { return }
-                
-                if realmChangeset.deleted.count > 0 || realmChangeset.inserted.count > 0 || realmChangeset.updated.count > 0 {
-                    // it's an update
-                    self?.mItem = objects.first as? T
-                    self?.state.accept(.ideal)
-                }
-            }).disposed(by: self.disposeBag)
-            
-        case .string(let idValue):
-            Realm.observableObject(T.T.self, forIdString: idValue).subscribe(onNext: { [weak self] (objects, realmChangeset) in
-                guard let realmChangeset = realmChangeset else { return }
-                
-                if realmChangeset.deleted.count > 0 || realmChangeset.inserted.count > 0 || realmChangeset.updated.count > 0 {
-                    // it's an update
-                    self?.mItem = objects.first as? T
-                    self?.state.accept(.ideal)
-                }
-            }).disposed(by: self.disposeBag)
+        case .int64(let idValue): itemPrimaryValue = idValue
+        case .string(let idValue): itemPrimaryValue = idValue
         }
+        UnrealmObservable.objectChanged(T.T.self, forPrimary: itemPrimaryValue).subscribe(onNext: { [weak self] (changed) in
+            switch changed {
+            case .deleted:
+                self?.mItem = nil
+                self?.state.accept(.ideal)
+            case .change(_):
+                self?.state.accept(.ideal)
+            case .error(let error):
+                self?.state.accept(.error(error))
+            }
+        }, onError: { [weak self] (error) in
+            self?.state.accept(.error(error))
+        }).disposed(by: disposeBag)
     }
     
     public func fetch(completion: ((NSError?) -> Void)? = nil) {

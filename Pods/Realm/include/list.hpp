@@ -270,7 +270,8 @@ void List::assign(Context& ctx, T&& values, bool update, bool update_only_diff)
             index++;
         });
         while (index < sz) {
-            remove(--sz);
+            remove(index);
+            sz--;
         }
     }
     else {

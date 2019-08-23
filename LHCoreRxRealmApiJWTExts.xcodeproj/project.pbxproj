@@ -46,7 +46,7 @@
 		084320DC22E69E9E0023FD3F /* LHCoreRxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D522E69E9E0023FD3F /* LHCoreRxExtensions.swift */; };
 		084320DD22E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D622E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift */; };
 		084320DE22E69E9E0023FD3F /* LHCoreRxListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D722E69E9E0023FD3F /* LHCoreRxListViewModel.swift */; };
-		084A3AF522A7A453003866D4 /* LHCoreRxRealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084A3AF422A7A453003866D4 /* LHCoreRxRealmExtensions.swift */; };
+		084A3AF522A7A453003866D4 /* LHCoreRxRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084A3AF422A7A453003866D4 /* LHCoreRxRealm.swift */; };
 		084BADB6229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h in Headers */ = {isa = PBXBuildFile; fileRef = 084BADB5229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08C0558F22BCD8EA00FBB84D /* SampleFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0558E22BCD8EA00FBB84D /* SampleFormViewModel.swift */; };
 		08C0FF16227FEEEF0078F5AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0FF15227FEEEF0078F5AE /* AppDelegate.swift */; };
@@ -62,6 +62,7 @@
 		248E895C4B4A39494CF1E42A /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC612A3C73CEE7F35895E1C /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework */; };
 		36B84F72325933EE0883832C /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D990B104EB1CA84C551460 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework */; };
 		4B3D8A7122E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4B3D8A7022E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec */; };
+		4BB7E1F7231039C2004A3BFD /* LHCoreRxUnrealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7E1F6231039C2004A3BFD /* LHCoreRxUnrealm.swift */; };
 		739ABB13EDF9F64AED570EF8 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AADAE4FABFE2B1AD6251ADA /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework */; };
 		8035DB621BAB492500466CB3 /* LHCoreRxRealmApiJWTExts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8111E3319A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts.framework */; };
 /* End PBXBuildFile section */
@@ -116,7 +117,7 @@
 		084320D522E69E9E0023FD3F /* LHCoreRxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxExtensions.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxExtensions.swift; sourceTree = SOURCE_ROOT; };
 		084320D622E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxApiWithJWT.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxApiWithJWT.swift; sourceTree = SOURCE_ROOT; };
 		084320D722E69E9E0023FD3F /* LHCoreRxListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxListViewModel.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxListViewModel.swift; sourceTree = SOURCE_ROOT; };
-		084A3AF422A7A453003866D4 /* LHCoreRxRealmExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealmExtensions.swift; sourceTree = "<group>"; };
+		084A3AF422A7A453003866D4 /* LHCoreRxRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealm.swift; sourceTree = "<group>"; };
 		084BADB5229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCoreRxRealmApiJWTExts.h; sourceTree = "<group>"; };
 		08C0558E22BCD8EA00FBB84D /* SampleFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleFormViewModel.swift; sourceTree = "<group>"; };
 		08C0FF13227FEEEF0078F5AE /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +136,7 @@
 		4012702B3AC783CB1FA5CBD2 /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4B3D8A7022E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LHCoreRxRealmApiJWTExts.podspec; sourceTree = "<group>"; };
 		4B7D166EB7C974CF7D91CA0C /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS Tests/Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4BB7E1F6231039C2004A3BFD /* LHCoreRxUnrealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHCoreRxUnrealm.swift; sourceTree = "<group>"; };
 		4CE292311EF4A393008DA555 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CF3B4281F5FC7900075BE59 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		68F3DC2536BFFE5E5C4B342C /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -349,7 +351,8 @@
 		F8111E3519A95C8B0040E7D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				084A3AF422A7A453003866D4 /* LHCoreRxRealmExtensions.swift */,
+				084A3AF422A7A453003866D4 /* LHCoreRxRealm.swift */,
+				4BB7E1F6231039C2004A3BFD /* LHCoreRxUnrealm.swift */,
 				0831F69C22B8D14200F26449 /* LHCoreRxRealmListViewModel.swift */,
 				0831F69A22B8D14100F26449 /* LHCoreRxRealmDetailViewModel.swift */,
 				084320D022E69E850023FD3F /* LHCoreRxApiJWTExts */,
@@ -687,7 +690,7 @@
 				081AD41022E6EEB20091BB8C /* JWTBase64.swift in Sources */,
 				084320DC22E69E9E0023FD3F /* LHCoreRxExtensions.swift in Sources */,
 				084320D922E69E9E0023FD3F /* LHCoreListFormViewModel.swift in Sources */,
-				084A3AF522A7A453003866D4 /* LHCoreRxRealmExtensions.swift in Sources */,
+				084A3AF522A7A453003866D4 /* LHCoreRxRealm.swift in Sources */,
 				081AD40B22E6EEB20091BB8C /* JWTEncode.swift in Sources */,
 				081AD40E22E6EEB20091BB8C /* JWTHMAC.swift in Sources */,
 				084320DE22E69E9E0023FD3F /* LHCoreRxListViewModel.swift in Sources */,
@@ -700,6 +703,7 @@
 				081AD40D22E6EEB20091BB8C /* JWTClaimSet.swift in Sources */,
 				081AD40F22E6EEB20091BB8C /* JWTHMACCommonCrypto.swift in Sources */,
 				0831F69D22B8D14200F26449 /* LHCoreRxRealmDetailViewModel.swift in Sources */,
+				4BB7E1F7231039C2004A3BFD /* LHCoreRxUnrealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

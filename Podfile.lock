@@ -2,12 +2,15 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
+  - CRuntime (2.1.2)
   - Nimble (8.0.2)
-  - Realm (3.16.2):
-    - Realm/Headers (= 3.16.2)
-  - Realm/Headers (3.16.2)
-  - RealmSwift (3.16.2):
-    - Realm (= 3.16.2)
+  - Realm (3.15.0):
+    - Realm/Headers (= 3.15.0)
+  - Realm/Headers (3.15.0)
+  - RealmSwift (3.15.0):
+    - Realm (= 3.15.0)
+  - Runtime (2.1.0):
+    - CRuntime
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -18,6 +21,9 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
   - SwiftyJSON (5.0.0)
+  - Unrealm (0.1.0):
+    - RealmSwift (= 3.15.0)
+    - Runtime (= 2.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -28,32 +34,39 @@ DEPENDENCIES:
   - RxRealm
   - RxSwift
   - SwiftyJSON
+  - Unrealm
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - CRuntime
     - Nimble
     - Realm
     - RealmSwift
+    - Runtime
     - RxCocoa
     - RxRealm
     - RxRelay
     - RxSwift
     - SwiftyJSON
+    - Unrealm
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  CRuntime: d7ae373e07ab36e92ad273259557e3817e0c214b
   Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
-  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
-  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
+  Realm: 9b834e1be6062f544805252c812348872dc5d4ed
+  RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
+  Runtime: 3e42815d18fa3075631768e79f02be2ad7e2b18f
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRealm: 1e81dcfca1fb50c3e9b3e1f8102bc875c5156a2e
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Unrealm: 3daa2a8165191375ec4f2a2e8a08e95f83f22cbb
 
-PODFILE CHECKSUM: 73cdcd5159568109e91e59f783e3fcb42f60f434
+PODFILE CHECKSUM: b19eadce2d6ce13a09ebb5399c4861a5a27596c5
 
 COCOAPODS: 1.7.4

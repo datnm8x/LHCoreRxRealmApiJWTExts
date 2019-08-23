@@ -14,6 +14,7 @@ target 'LHCoreRxRealmApiJWTExts iOS' do
   pod 'RxCocoa'
   pod 'RealmSwift'
   pod 'RxRealm'
+  pod 'Unrealm'
 
   target 'LHCoreRxRealmApiJWTExts iOS Tests' do
     inherit! :search_paths

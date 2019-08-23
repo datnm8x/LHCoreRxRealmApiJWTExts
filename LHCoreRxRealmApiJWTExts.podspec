@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
 s.name             = 'LHCoreRxRealmApiJWTExts'
-s.version          = '1.0'
-s.summary          = 'A short description of LHCoreRxRealmApiJWTExts.'
+s.version          = '1.1'
+s.summary          = 'ListViewModel using with RxRealm, JWT for API, and Unrealm'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -40,8 +40,9 @@ s.dependency 'Alamofire', '~> 4'
 s.dependency 'AlamofireImage', '~> 3'
 s.dependency 'RxSwift', '~> 5'
 s.dependency 'RxCocoa', '~> 5'
-s.dependency 'RealmSwift', '~> 3'
+s.dependency 'RealmSwift', '3.15.0'
 s.dependency 'RxRealm', '~> 1'
+s.dependency 'Unrealm', '0.1.0'
 
 # s.public_header_files = 'Pod/Classes/**/*.h'
 # s.frameworks = 'UIKit', 'MapKit'
