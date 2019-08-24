@@ -6,494 +6,203 @@
 	objectVersion = 51;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		4CCB207C1D45563900C64D5B /* Cleanup Whitespace */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 4CCB207F1D45563900C64D5B /* Build configuration list for PBXAggregateTarget "Cleanup Whitespace" */;
-			buildPhases = (
-				4CCB20801D45564D00C64D5B /* Cleanup Whitespace */,
-			);
-			dependencies = (
-			);
-			name = "Cleanup Whitespace";
-			productName = "Cleanup Whitespace";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		081424BE22AF3A9700AF6892 /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081424BD22AF3A9700AF6892 /* UserDetailModel.swift */; };
-		081A1A06229E6D990062D495 /* LHCoreRxRealmApiJWTExts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8111E3319A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts.framework */; };
-		081AD40922E6EEB20091BB8C /* JWTClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40022E6EEB20091BB8C /* JWTClaims.swift */; };
-		081AD40A22E6EEB20091BB8C /* LHSwiftJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40122E6EEB20091BB8C /* LHSwiftJWT.swift */; };
-		081AD40B22E6EEB20091BB8C /* JWTEncode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40222E6EEB20091BB8C /* JWTEncode.swift */; };
-		081AD40C22E6EEB20091BB8C /* JWTJOSEHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40322E6EEB20091BB8C /* JWTJOSEHeader.swift */; };
-		081AD40D22E6EEB20091BB8C /* JWTClaimSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40422E6EEB20091BB8C /* JWTClaimSet.swift */; };
-		081AD40E22E6EEB20091BB8C /* JWTHMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40522E6EEB20091BB8C /* JWTHMAC.swift */; };
-		081AD40F22E6EEB20091BB8C /* JWTHMACCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40622E6EEB20091BB8C /* JWTHMACCommonCrypto.swift */; };
-		081AD41022E6EEB20091BB8C /* JWTBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40722E6EEB20091BB8C /* JWTBase64.swift */; };
-		081AD41122E6EEB20091BB8C /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081AD40822E6EEB20091BB8C /* JWTDecode.swift */; };
-		0827D08B22ADF9F9000A7984 /* ExtenListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827D08A22ADF9F9000A7984 /* ExtenListViewModel.swift */; };
-		0827D08F22AE357B000A7984 /* SampleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827D08E22AE357B000A7984 /* SampleDetailViewModel.swift */; };
-		0827D09122AE41E7000A7984 /* RxDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827D09022AE41E7000A7984 /* RxDetailViewController.swift */; };
-		0831F69922B8924A00F26449 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0831F69822B8924A00F26449 /* ListViewController.swift */; };
-		0831F69D22B8D14200F26449 /* LHCoreRxRealmDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0831F69A22B8D14100F26449 /* LHCoreRxRealmDetailViewModel.swift */; };
-		0831F69F22B8D14200F26449 /* LHCoreRxRealmListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0831F69C22B8D14200F26449 /* LHCoreRxRealmListViewModel.swift */; };
-		083BD8B4227FE43A000C215D /* LHCoreRxRealmViewModel_UTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083BD8A8227FE439000C215D /* LHCoreRxRealmViewModel_UTests.swift */; };
-		084320D822E69E9E0023FD3F /* LHCoreListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D122E69E9D0023FD3F /* LHCoreListViewDataSource.swift */; };
-		084320D922E69E9E0023FD3F /* LHCoreListFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D222E69E9D0023FD3F /* LHCoreListFormViewModel.swift */; };
-		084320DA22E69E9E0023FD3F /* LHCoreRxKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D322E69E9D0023FD3F /* LHCoreRxKeyboard.swift */; };
-		084320DB22E69E9E0023FD3F /* LHCoreRxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D422E69E9D0023FD3F /* LHCoreRxAPIService.swift */; };
-		084320DC22E69E9E0023FD3F /* LHCoreRxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D522E69E9E0023FD3F /* LHCoreRxExtensions.swift */; };
-		084320DD22E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D622E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift */; };
-		084320DE22E69E9E0023FD3F /* LHCoreRxListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084320D722E69E9E0023FD3F /* LHCoreRxListViewModel.swift */; };
-		084A3AF522A7A453003866D4 /* LHCoreRxRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084A3AF422A7A453003866D4 /* LHCoreRxRealm.swift */; };
-		084BADB6229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h in Headers */ = {isa = PBXBuildFile; fileRef = 084BADB5229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08C0558F22BCD8EA00FBB84D /* SampleFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0558E22BCD8EA00FBB84D /* SampleFormViewModel.swift */; };
-		08C0FF16227FEEEF0078F5AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0FF15227FEEEF0078F5AE /* AppDelegate.swift */; };
-		08C0FF3B227FEF6B0078F5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0FF32227FEF6B0078F5AE /* Assets.xcassets */; };
-		08C0FF3C227FEF6B0078F5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C0FF33227FEF6B0078F5AE /* LaunchScreen.storyboard */; };
-		08C0FF3D227FEF6B0078F5AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C0FF35227FEF6B0078F5AE /* Main.storyboard */; };
-		08F57F1C22A9FC5100DF39F8 /* SampleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F57F1B22A9FC5000DF39F8 /* SampleTableCell.swift */; };
-		08F57F2722AA165F00DF39F8 /* RxListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F57F2522AA165F00DF39F8 /* RxListViewController.swift */; };
-		08F57F2822AA165F00DF39F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F57F2622AA165F00DF39F8 /* MainViewController.swift */; };
-		08F57F2A22AA168000DF39F8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F57F2922AA168000DF39F8 /* UserModel.swift */; };
-		08F57F2C22AA223600DF39F8 /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F57F2B22AA223600DF39F8 /* UserTableCell.swift */; };
-		08F57F2E22AA225400DF39F8 /* UserTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F57F2D22AA225400DF39F8 /* UserTableCell.xib */; };
-		248E895C4B4A39494CF1E42A /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC612A3C73CEE7F35895E1C /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework */; };
-		36B84F72325933EE0883832C /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D990B104EB1CA84C551460 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework */; };
-		4B3D8A7122E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4B3D8A7022E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec */; };
-		4BB7E1F7231039C2004A3BFD /* LHCoreRxUnrealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7E1F6231039C2004A3BFD /* LHCoreRxUnrealm.swift */; };
-		739ABB13EDF9F64AED570EF8 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AADAE4FABFE2B1AD6251ADA /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework */; };
-		8035DB621BAB492500466CB3 /* LHCoreRxRealmApiJWTExts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8111E3319A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts.framework */; };
+		4BC4CBE92310FCF800E83632 /* LHCoreRxRealmListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBE52310FCF800E83632 /* LHCoreRxRealmListViewModel.swift */; };
+		4BC4CBEA2310FCF800E83632 /* LHCoreUnrealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBE62310FCF800E83632 /* LHCoreUnrealm.swift */; };
+		4BC4CBEB2310FCF800E83632 /* LHCoreRxRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBE72310FCF800E83632 /* LHCoreRxRealm.swift */; };
+		4BC4CBEC2310FCF800E83632 /* LHCoreRxRealmDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBE82310FCF800E83632 /* LHCoreRxRealmDetailViewModel.swift */; };
+		4BC4CBF52310FD4D00E83632 /* LHCoreRxKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBEE2310FD4C00E83632 /* LHCoreRxKeyboard.swift */; };
+		4BC4CBF62310FD4D00E83632 /* LHCoreListFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBEF2310FD4C00E83632 /* LHCoreListFormViewModel.swift */; };
+		4BC4CBF72310FD4D00E83632 /* LHCoreRxApiWithJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBF02310FD4D00E83632 /* LHCoreRxApiWithJWT.swift */; };
+		4BC4CBF82310FD4D00E83632 /* LHCoreRxListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBF12310FD4D00E83632 /* LHCoreRxListViewModel.swift */; };
+		4BC4CBF92310FD4D00E83632 /* LHCoreListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBF22310FD4D00E83632 /* LHCoreListViewDataSource.swift */; };
+		4BC4CBFA2310FD4D00E83632 /* LHCoreRxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBF32310FD4D00E83632 /* LHCoreRxAPIService.swift */; };
+		4BC4CBFB2310FD4D00E83632 /* LHCoreRxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBF42310FD4D00E83632 /* LHCoreRxExtensions.swift */; };
+		4BC4CC062310FD7D00E83632 /* JWTHMACCommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBFD2310FD7D00E83632 /* JWTHMACCommonCrypto.swift */; };
+		4BC4CC072310FD7D00E83632 /* JWTEncode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBFE2310FD7D00E83632 /* JWTEncode.swift */; };
+		4BC4CC082310FD7D00E83632 /* JWTBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CBFF2310FD7D00E83632 /* JWTBase64.swift */; };
+		4BC4CC092310FD7D00E83632 /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CC002310FD7D00E83632 /* JWTDecode.swift */; };
+		4BC4CC0A2310FD7D00E83632 /* JWTClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CC012310FD7D00E83632 /* JWTClaims.swift */; };
+		4BC4CC0B2310FD7D00E83632 /* JWTJOSEHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CC022310FD7D00E83632 /* JWTJOSEHeader.swift */; };
+		4BC4CC0C2310FD7D00E83632 /* LHSwiftJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CC032310FD7D00E83632 /* LHSwiftJWT.swift */; };
+		4BC4CC0D2310FD7D00E83632 /* JWTHMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CC042310FD7D00E83632 /* JWTHMAC.swift */; };
+		4BC4CC0E2310FD7D00E83632 /* JWTClaimSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4CC052310FD7D00E83632 /* JWTClaimSet.swift */; };
+		9F1E94AC1CF8E9C500BC469B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1E94AB1CF8E9C500BC469B /* Realm.framework */; };
+		9F1E94AE1CF8E9C700BC469B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1E94AD1CF8E9C700BC469B /* RealmSwift.framework */; };
+		9F1E94B01CF8E9CA00BC469B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1E94AF1CF8E9CA00BC469B /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		081A1A07229E6DA00062D495 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8111E2A19A95C8B0040E7D1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "ApvCoreRxExtensions iOS";
-		};
-		08C0FF3F227FEF950078F5AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8111E2A19A95C8B0040E7D1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 08C0FF12227FEEEF0078F5AE;
-			remoteInfo = Example;
-		};
-		F8111E6519A967880040E7D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8111E2A19A95C8B0040E7D1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		08132C5C22813567004DD791 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = SOURCE_ROOT; };
-		081424BD22AF3A9700AF6892 /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
-		081AD40022E6EEB20091BB8C /* JWTClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTClaims.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTClaims.swift; sourceTree = SOURCE_ROOT; };
-		081AD40122E6EEB20091BB8C /* LHSwiftJWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHSwiftJWT.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/LHSwiftJWT.swift; sourceTree = SOURCE_ROOT; };
-		081AD40222E6EEB20091BB8C /* JWTEncode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTEncode.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTEncode.swift; sourceTree = SOURCE_ROOT; };
-		081AD40322E6EEB20091BB8C /* JWTJOSEHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTJOSEHeader.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTJOSEHeader.swift; sourceTree = SOURCE_ROOT; };
-		081AD40422E6EEB20091BB8C /* JWTClaimSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTClaimSet.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTClaimSet.swift; sourceTree = SOURCE_ROOT; };
-		081AD40522E6EEB20091BB8C /* JWTHMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTHMAC.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTHMAC.swift; sourceTree = SOURCE_ROOT; };
-		081AD40622E6EEB20091BB8C /* JWTHMACCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTHMACCommonCrypto.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTHMACCommonCrypto.swift; sourceTree = SOURCE_ROOT; };
-		081AD40722E6EEB20091BB8C /* JWTBase64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTBase64.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTBase64.swift; sourceTree = SOURCE_ROOT; };
-		081AD40822E6EEB20091BB8C /* JWTDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTDecode.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTDecode.swift; sourceTree = SOURCE_ROOT; };
-		0827D08A22ADF9F9000A7984 /* ExtenListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenListViewModel.swift; sourceTree = "<group>"; };
-		0827D08E22AE357B000A7984 /* SampleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewModel.swift; sourceTree = "<group>"; };
-		0827D09022AE41E7000A7984 /* RxDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDetailViewController.swift; sourceTree = "<group>"; };
-		0831F69822B8924A00F26449 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		0831F69A22B8D14100F26449 /* LHCoreRxRealmDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealmDetailViewModel.swift; sourceTree = "<group>"; };
-		0831F69C22B8D14200F26449 /* LHCoreRxRealmListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealmListViewModel.swift; sourceTree = "<group>"; };
-		083BD8A8227FE439000C215D /* LHCoreRxRealmViewModel_UTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealmViewModel_UTests.swift; sourceTree = "<group>"; };
-		084320D122E69E9D0023FD3F /* LHCoreListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreListViewDataSource.swift; path = LHCoreRxApiJWTExts/Source/LHCoreListViewDataSource.swift; sourceTree = SOURCE_ROOT; };
-		084320D222E69E9D0023FD3F /* LHCoreListFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreListFormViewModel.swift; path = LHCoreRxApiJWTExts/Source/LHCoreListFormViewModel.swift; sourceTree = SOURCE_ROOT; };
-		084320D322E69E9D0023FD3F /* LHCoreRxKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxKeyboard.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxKeyboard.swift; sourceTree = SOURCE_ROOT; };
-		084320D422E69E9D0023FD3F /* LHCoreRxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxAPIService.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxAPIService.swift; sourceTree = SOURCE_ROOT; };
-		084320D522E69E9E0023FD3F /* LHCoreRxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxExtensions.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxExtensions.swift; sourceTree = SOURCE_ROOT; };
-		084320D622E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxApiWithJWT.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxApiWithJWT.swift; sourceTree = SOURCE_ROOT; };
-		084320D722E69E9E0023FD3F /* LHCoreRxListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxListViewModel.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxListViewModel.swift; sourceTree = SOURCE_ROOT; };
-		084A3AF422A7A453003866D4 /* LHCoreRxRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealm.swift; sourceTree = "<group>"; };
-		084BADB5229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCoreRxRealmApiJWTExts.h; sourceTree = "<group>"; };
-		08C0558E22BCD8EA00FBB84D /* SampleFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleFormViewModel.swift; sourceTree = "<group>"; };
-		08C0FF13227FEEEF0078F5AE /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		08C0FF15227FEEEF0078F5AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08C0FF32227FEF6B0078F5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		08C0FF34227FEF6B0078F5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		08C0FF36227FEF6B0078F5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		08C0FF37227FEF6B0078F5AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08F57F1B22A9FC5000DF39F8 /* SampleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableCell.swift; sourceTree = "<group>"; };
-		08F57F2522AA165F00DF39F8 /* RxListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxListViewController.swift; sourceTree = "<group>"; };
-		08F57F2622AA165F00DF39F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		08F57F2922AA168000DF39F8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		08F57F2B22AA223600DF39F8 /* UserTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCell.swift; sourceTree = "<group>"; };
-		08F57F2D22AA225400DF39F8 /* UserTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableCell.xib; sourceTree = "<group>"; };
-		208FC8AA5447DD40818C6079 /* Pods-LHCoreRxRealmApiJWTExts iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS.release.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS/Pods-LHCoreRxRealmApiJWTExts iOS.release.xcconfig"; sourceTree = "<group>"; };
-		4012702B3AC783CB1FA5CBD2 /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4B3D8A7022E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LHCoreRxRealmApiJWTExts.podspec; sourceTree = "<group>"; };
-		4B7D166EB7C974CF7D91CA0C /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS Tests/Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4BB7E1F6231039C2004A3BFD /* LHCoreRxUnrealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHCoreRxUnrealm.swift; sourceTree = "<group>"; };
-		4CE292311EF4A393008DA555 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4CF3B4281F5FC7900075BE59 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		68F3DC2536BFFE5E5C4B342C /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig"; sourceTree = "<group>"; };
-		7AADAE4FABFE2B1AD6251ADA /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2D990B104EB1CA84C551460 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCC612A3C73CEE7F35895E1C /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LHCoreRxRealmApiJWTExts_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7925165056A4A2CEA9681C2 /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS Tests.release.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS Tests/Pods-LHCoreRxRealmApiJWTExts iOS Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EE494D8C3225BDDC25629881 /* Pods-LHCoreRxRealmApiJWTExts iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHCoreRxRealmApiJWTExts iOS.debug.xcconfig"; path = "Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS/Pods-LHCoreRxRealmApiJWTExts iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		F8111E3319A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LHCoreRxRealmApiJWTExts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8111E3E19A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LHCoreRxRealmApiJWTExts iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8111E4119A95C8B0040E7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC4CBE52310FCF800E83632 /* LHCoreRxRealmListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealmListViewModel.swift; sourceTree = "<group>"; };
+		4BC4CBE62310FCF800E83632 /* LHCoreUnrealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreUnrealm.swift; sourceTree = "<group>"; };
+		4BC4CBE72310FCF800E83632 /* LHCoreRxRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealm.swift; sourceTree = "<group>"; };
+		4BC4CBE82310FCF800E83632 /* LHCoreRxRealmDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LHCoreRxRealmDetailViewModel.swift; sourceTree = "<group>"; };
+		4BC4CBEE2310FD4C00E83632 /* LHCoreRxKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxKeyboard.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxKeyboard.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBEF2310FD4C00E83632 /* LHCoreListFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreListFormViewModel.swift; path = LHCoreRxApiJWTExts/Source/LHCoreListFormViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBF02310FD4D00E83632 /* LHCoreRxApiWithJWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxApiWithJWT.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxApiWithJWT.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBF12310FD4D00E83632 /* LHCoreRxListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxListViewModel.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxListViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBF22310FD4D00E83632 /* LHCoreListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreListViewDataSource.swift; path = LHCoreRxApiJWTExts/Source/LHCoreListViewDataSource.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBF32310FD4D00E83632 /* LHCoreRxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxAPIService.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxAPIService.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBF42310FD4D00E83632 /* LHCoreRxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHCoreRxExtensions.swift; path = LHCoreRxApiJWTExts/Source/LHCoreRxExtensions.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBFD2310FD7D00E83632 /* JWTHMACCommonCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTHMACCommonCrypto.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTHMACCommonCrypto.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBFE2310FD7D00E83632 /* JWTEncode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTEncode.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTEncode.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CBFF2310FD7D00E83632 /* JWTBase64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTBase64.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTBase64.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CC002310FD7D00E83632 /* JWTDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTDecode.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTDecode.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CC012310FD7D00E83632 /* JWTClaims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTClaims.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTClaims.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CC022310FD7D00E83632 /* JWTJOSEHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTJOSEHeader.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTJOSEHeader.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CC032310FD7D00E83632 /* LHSwiftJWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LHSwiftJWT.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/LHSwiftJWT.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CC042310FD7D00E83632 /* JWTHMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTHMAC.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTHMAC.swift; sourceTree = SOURCE_ROOT; };
+		4BC4CC052310FD7D00E83632 /* JWTClaimSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JWTClaimSet.swift; path = LHCoreRxApiJWTExts/LHSwiftJWT/Source/JWTClaimSet.swift; sourceTree = SOURCE_ROOT; };
+		9F0BE4231CF8DB4B00919282 /* LHCoreRxRealmApiJWTExts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LHCoreRxRealmApiJWTExts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1E94AB1CF8E9C500BC469B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9F1E94AD1CF8E9C700BC469B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9F1E94AF1CF8E9CA00BC469B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		9F1E94C01CF8EA6D00BC469B /* LHCoreRxRealmApiJWTExts-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LHCoreRxRealmApiJWTExts-iOS-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		08C0FF10227FEEEF0078F5AE /* Frameworks */ = {
+		9F0BE41F1CF8DB4B00919282 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				081A1A06229E6D990062D495 /* LHCoreRxRealmApiJWTExts.framework in Frameworks */,
-				36B84F72325933EE0883832C /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8111E2F19A95C8B0040E7D1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				248E895C4B4A39494CF1E42A /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8111E3B19A95C8B0040E7D1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8035DB621BAB492500466CB3 /* LHCoreRxRealmApiJWTExts.framework in Frameworks */,
-				739ABB13EDF9F64AED570EF8 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework in Frameworks */,
+				9F1E94AC1CF8E9C500BC469B /* Realm.framework in Frameworks */,
+				9F1E94AE1CF8E9C700BC469B /* RealmSwift.framework in Frameworks */,
+				9F1E94B01CF8E9CA00BC469B /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		084320D022E69E850023FD3F /* LHCoreRxApiJWTExts */ = {
+		4BC4CBED2310FCFE00E83632 /* LHCoreRxApiJWTExts */ = {
 			isa = PBXGroup;
 			children = (
-				084320D222E69E9D0023FD3F /* LHCoreListFormViewModel.swift */,
-				084320D122E69E9D0023FD3F /* LHCoreListViewDataSource.swift */,
-				084320D422E69E9D0023FD3F /* LHCoreRxAPIService.swift */,
-				084320D622E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift */,
-				084320D522E69E9E0023FD3F /* LHCoreRxExtensions.swift */,
-				084320D322E69E9D0023FD3F /* LHCoreRxKeyboard.swift */,
-				084320D722E69E9E0023FD3F /* LHCoreRxListViewModel.swift */,
+				4BC4CBEF2310FD4C00E83632 /* LHCoreListFormViewModel.swift */,
+				4BC4CBF22310FD4D00E83632 /* LHCoreListViewDataSource.swift */,
+				4BC4CBF32310FD4D00E83632 /* LHCoreRxAPIService.swift */,
+				4BC4CBF02310FD4D00E83632 /* LHCoreRxApiWithJWT.swift */,
+				4BC4CBF42310FD4D00E83632 /* LHCoreRxExtensions.swift */,
+				4BC4CBEE2310FD4C00E83632 /* LHCoreRxKeyboard.swift */,
+				4BC4CBF12310FD4D00E83632 /* LHCoreRxListViewModel.swift */,
+				4BC4CBFC2310FD5100E83632 /* LHSwiftJWT */,
 			);
 			name = LHCoreRxApiJWTExts;
 			sourceTree = "<group>";
 		};
-		0873E77F22E6A80D005D6CE0 /* LHSwiftJWT */ = {
+		4BC4CBFC2310FD5100E83632 /* LHSwiftJWT */ = {
 			isa = PBXGroup;
 			children = (
-				081AD40722E6EEB20091BB8C /* JWTBase64.swift */,
-				081AD40022E6EEB20091BB8C /* JWTClaims.swift */,
-				081AD40422E6EEB20091BB8C /* JWTClaimSet.swift */,
-				081AD40822E6EEB20091BB8C /* JWTDecode.swift */,
-				081AD40222E6EEB20091BB8C /* JWTEncode.swift */,
-				081AD40522E6EEB20091BB8C /* JWTHMAC.swift */,
-				081AD40622E6EEB20091BB8C /* JWTHMACCommonCrypto.swift */,
-				081AD40322E6EEB20091BB8C /* JWTJOSEHeader.swift */,
-				081AD40122E6EEB20091BB8C /* LHSwiftJWT.swift */,
+				4BC4CBFF2310FD7D00E83632 /* JWTBase64.swift */,
+				4BC4CC012310FD7D00E83632 /* JWTClaims.swift */,
+				4BC4CC052310FD7D00E83632 /* JWTClaimSet.swift */,
+				4BC4CC002310FD7D00E83632 /* JWTDecode.swift */,
+				4BC4CBFE2310FD7D00E83632 /* JWTEncode.swift */,
+				4BC4CC042310FD7D00E83632 /* JWTHMAC.swift */,
+				4BC4CBFD2310FD7D00E83632 /* JWTHMACCommonCrypto.swift */,
+				4BC4CC022310FD7D00E83632 /* JWTJOSEHeader.swift */,
+				4BC4CC032310FD7D00E83632 /* LHSwiftJWT.swift */,
 			);
 			name = LHSwiftJWT;
 			sourceTree = "<group>";
 		};
-		089D61CC22A8AFDC003E648A /* ViewModels */ = {
+		9F0BE4191CF8DB4B00919282 = {
 			isa = PBXGroup;
 			children = (
-				0827D08A22ADF9F9000A7984 /* ExtenListViewModel.swift */,
-				0827D08E22AE357B000A7984 /* SampleDetailViewModel.swift */,
-				08C0558E22BCD8EA00FBB84D /* SampleFormViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		08C0FF14227FEEEF0078F5AE /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				08C0FF15227FEEEF0078F5AE /* AppDelegate.swift */,
-				08F57F2422AA165F00DF39F8 /* ViewControllers */,
-				08F57F2322AA163F00DF39F8 /* Models */,
-				089D61CC22A8AFDC003E648A /* ViewModels */,
-				08C0FF2D227FEF6A0078F5AE /* Views */,
-				08C0FF31227FEF6B0078F5AE /* SupportingFiles */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		08C0FF2D227FEF6A0078F5AE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				08F57F1B22A9FC5000DF39F8 /* SampleTableCell.swift */,
-				08F57F2B22AA223600DF39F8 /* UserTableCell.swift */,
-				08F57F2D22AA225400DF39F8 /* UserTableCell.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		08C0FF31227FEF6B0078F5AE /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				08C0FF32227FEF6B0078F5AE /* Assets.xcassets */,
-				08C0FF33227FEF6B0078F5AE /* LaunchScreen.storyboard */,
-				08C0FF35227FEF6B0078F5AE /* Main.storyboard */,
-				08C0FF37227FEF6B0078F5AE /* Info.plist */,
-			);
-			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		08F57F2322AA163F00DF39F8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				08F57F2922AA168000DF39F8 /* UserModel.swift */,
-				081424BD22AF3A9700AF6892 /* UserDetailModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		08F57F2422AA165F00DF39F8 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				08F57F2622AA165F00DF39F8 /* MainViewController.swift */,
-				08F57F2522AA165F00DF39F8 /* RxListViewController.swift */,
-				0827D09022AE41E7000A7984 /* RxDetailViewController.swift */,
-				0831F69822B8924A00F26449 /* ListViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		4C3238E91B3617A600FE04AE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		4CE292301EF4A386008DA555 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				4CE292311EF4A393008DA555 /* README.md */,
-			);
-			name = Documentation;
-			sourceTree = "<group>";
-		};
-		4CE292381EF4B116008DA555 /* Deployment */ = {
-			isa = PBXGroup;
-			children = (
-				4B3D8A7022E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec */,
-				4CF3B4281F5FC7900075BE59 /* LICENSE */,
-			);
-			name = Deployment;
-			sourceTree = "<group>";
-		};
-		6EE5069E5E56053977F0BCED /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EE494D8C3225BDDC25629881 /* Pods-LHCoreRxRealmApiJWTExts iOS.debug.xcconfig */,
-				208FC8AA5447DD40818C6079 /* Pods-LHCoreRxRealmApiJWTExts iOS.release.xcconfig */,
-				4B7D166EB7C974CF7D91CA0C /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig */,
-				E7925165056A4A2CEA9681C2 /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.release.xcconfig */,
-				4012702B3AC783CB1FA5CBD2 /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig */,
-				68F3DC2536BFFE5E5C4B342C /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		BAF45E3F4DC45875E5F47A10 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BCC612A3C73CEE7F35895E1C /* Pods_LHCoreRxRealmApiJWTExts_iOS.framework */,
-				7AADAE4FABFE2B1AD6251ADA /* Pods_LHCoreRxRealmApiJWTExts_iOS_Tests.framework */,
-				B2D990B104EB1CA84C551460 /* Pods_LHCoreRxRealmApiJWTExts_iOS_Example.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F8111E2919A95C8B0040E7D1 = {
-			isa = PBXGroup;
-			children = (
-				4CE292381EF4B116008DA555 /* Deployment */,
-				4CE292301EF4A386008DA555 /* Documentation */,
-				F8111E3519A95C8B0040E7D1 /* Source */,
-				F8111E3F19A95C8B0040E7D1 /* Tests */,
-				08C0FF14227FEEEF0078F5AE /* Example */,
-				F8111E3419A95C8B0040E7D1 /* Products */,
-				6EE5069E5E56053977F0BCED /* Pods */,
-				BAF45E3F4DC45875E5F47A10 /* Frameworks */,
+				9F1E94C01CF8EA6D00BC469B /* LHCoreRxRealmApiJWTExts-iOS-Info.plist */,
+				9F1E94A61CF8E98F00BC469B /* Classes */,
+				9F0BE4241CF8DB4B00919282 /* Products */,
+				9F1E94B11CF8E9D200BC469B /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
 			tabWidth = 4;
-			usesTabs = 0;
 		};
-		F8111E3419A95C8B0040E7D1 /* Products */ = {
+		9F0BE4241CF8DB4B00919282 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8111E3319A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts.framework */,
-				F8111E3E19A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS Tests.xctest */,
-				08C0FF13227FEEEF0078F5AE /* Example.app */,
+				9F0BE4231CF8DB4B00919282 /* LHCoreRxRealmApiJWTExts.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F8111E3519A95C8B0040E7D1 /* Source */ = {
+		9F1E94A61CF8E98F00BC469B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				084A3AF422A7A453003866D4 /* LHCoreRxRealm.swift */,
-				4BB7E1F6231039C2004A3BFD /* LHCoreRxUnrealm.swift */,
-				0831F69C22B8D14200F26449 /* LHCoreRxRealmListViewModel.swift */,
-				0831F69A22B8D14100F26449 /* LHCoreRxRealmDetailViewModel.swift */,
-				084320D022E69E850023FD3F /* LHCoreRxApiJWTExts */,
-				0873E77F22E6A80D005D6CE0 /* LHSwiftJWT */,
-				F8111E3619A95C8B0040E7D1 /* Supporting Files */,
+				4BC4CBE72310FCF800E83632 /* LHCoreRxRealm.swift */,
+				4BC4CBE82310FCF800E83632 /* LHCoreRxRealmDetailViewModel.swift */,
+				4BC4CBE52310FCF800E83632 /* LHCoreRxRealmListViewModel.swift */,
+				4BC4CBE62310FCF800E83632 /* LHCoreUnrealm.swift */,
+				4BC4CBED2310FCFE00E83632 /* LHCoreRxApiJWTExts */,
 			);
-			path = Source;
+			name = Classes;
+			path = Pod/Classes;
 			sourceTree = "<group>";
 		};
-		F8111E3619A95C8B0040E7D1 /* Supporting Files */ = {
+		9F1E94B11CF8E9D200BC469B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				084BADB5229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h */,
-				08132C5C22813567004DD791 /* Info.plist */,
+				9F1E94B21CF8E9EA00BC469B /* iOS */,
 			);
-			name = "Supporting Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F8111E3F19A95C8B0040E7D1 /* Tests */ = {
+		9F1E94B21CF8E9EA00BC469B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				083BD8A8227FE439000C215D /* LHCoreRxRealmViewModel_UTests.swift */,
-				4C3238E91B3617A600FE04AE /* Resources */,
-				F8111E4019A95C8B0040E7D1 /* Supporting Files */,
+				9F1E94AB1CF8E9C500BC469B /* Realm.framework */,
+				9F1E94AD1CF8E9C700BC469B /* RealmSwift.framework */,
+				9F1E94AF1CF8E9CA00BC469B /* RxSwift.framework */,
 			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		F8111E4019A95C8B0040E7D1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F8111E4119A95C8B0040E7D1 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F8111E3019A95C8B0040E7D1 /* Headers */ = {
+		9F0BE4201CF8DB4B00919282 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				084BADB6229D1BAB00107AD0 /* LHCoreRxRealmApiJWTExts.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		08C0FF12227FEEEF0078F5AE /* Example */ = {
+		9F0BE4221CF8DB4B00919282 /* LHCoreRxRealmApiJWTExts-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08C0FF22227FEEF00078F5AE /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = 9F0BE42B1CF8DB4B00919282 /* Build configuration list for PBXNativeTarget "LHCoreRxRealmApiJWTExts-iOS" */;
 			buildPhases = (
-				9DFAAD2733CA9B09F32FE76D /* [CP] Check Pods Manifest.lock */,
-				08C0FF0F227FEEEF0078F5AE /* Sources */,
-				08C0FF10227FEEEF0078F5AE /* Frameworks */,
-				08C0FF11227FEEEF0078F5AE /* Resources */,
-				72DC0E61847901D80D8975D3 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				081A1A08229E6DA00062D495 /* PBXTargetDependency */,
-			);
-			name = Example;
-			productName = Example;
-			productReference = 08C0FF13227FEEEF0078F5AE /* Example.app */;
-			productType = "com.apple.product-type.application";
-		};
-		F8111E3219A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8111E4619A95C8B0040E7D1 /* Build configuration list for PBXNativeTarget "LHCoreRxRealmApiJWTExts iOS" */;
-			buildPhases = (
-				2B2C7241FB0DD7A6D7C40761 /* [CP] Check Pods Manifest.lock */,
-				F8111E2E19A95C8B0040E7D1 /* Sources */,
-				F8111E2F19A95C8B0040E7D1 /* Frameworks */,
-				F8111E3019A95C8B0040E7D1 /* Headers */,
-				F8111E3119A95C8B0040E7D1 /* Resources */,
+				9F0BE41E1CF8DB4B00919282 /* Sources */,
+				9F0BE41F1CF8DB4B00919282 /* Frameworks */,
+				9F0BE4201CF8DB4B00919282 /* Headers */,
+				9F0BE4211CF8DB4B00919282 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "LHCoreRxRealmApiJWTExts iOS";
-			productName = Alamofire;
-			productReference = F8111E3319A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts.framework */;
+			name = "LHCoreRxRealmApiJWTExts-iOS";
+			productName = RxRealm;
+			productReference = 9F0BE4231CF8DB4B00919282 /* LHCoreRxRealmApiJWTExts.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		F8111E3D19A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8111E4919A95C8B0040E7D1 /* Build configuration list for PBXNativeTarget "LHCoreRxRealmApiJWTExts iOS Tests" */;
-			buildPhases = (
-				5E1C713B36A76C05F19FA1DF /* [CP] Check Pods Manifest.lock */,
-				F8111E3A19A95C8B0040E7D1 /* Sources */,
-				F8111E3B19A95C8B0040E7D1 /* Frameworks */,
-				F8111E3C19A95C8B0040E7D1 /* Resources */,
-				C54AA0F13E9257A46BBCB10E /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F8111E6619A967880040E7D1 /* PBXTargetDependency */,
-				08C0FF40227FEF950078F5AE /* PBXTargetDependency */,
-			);
-			name = "LHCoreRxRealmApiJWTExts iOS Tests";
-			productName = AlamofireTests;
-			productReference = F8111E3E19A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F8111E2A19A95C8B0040E7D1 /* Project object */ = {
+		9F0BE41A1CF8DB4B00919282 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Lao Hac";
+				ORGANIZATIONNAME = RxSwiftCommunity;
 				TargetAttributes = {
-					08C0FF12227FEEEF0078F5AE = {
-						CreatedOnToolsVersion = 10.2.1;
-					};
-					4CCB207C1D45563900C64D5B = {
+					9F0BE4221CF8DB4B00919282 = {
 						CreatedOnToolsVersion = 7.3.1;
-						ProvisioningStyle = Manual;
-					};
-					F8111E3219A95C8B0040E7D1 = {
-						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
-					};
-					F8111E3D19A95C8B0040E7D1 = {
-						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
-						TestTargetID = 08C0FF12227FEEEF0078F5AE;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
-			buildConfigurationList = F8111E2D19A95C8B0040E7D1 /* Build configuration list for PBXProject "LHCoreRxRealmApiJWTExts" */;
+			buildConfigurationList = 9F0BE41D1CF8DB4B00919282 /* Build configuration list for PBXProject "LHCoreRxRealmApiJWTExts" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -501,40 +210,18 @@
 				en,
 				Base,
 			);
-			mainGroup = F8111E2919A95C8B0040E7D1;
-			productRefGroup = F8111E3419A95C8B0040E7D1 /* Products */;
+			mainGroup = 9F0BE4191CF8DB4B00919282;
+			productRefGroup = 9F0BE4241CF8DB4B00919282 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F8111E3219A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS */,
-				F8111E3D19A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS Tests */,
-				4CCB207C1D45563900C64D5B /* Cleanup Whitespace */,
-				08C0FF12227FEEEF0078F5AE /* Example */,
+				9F0BE4221CF8DB4B00919282 /* LHCoreRxRealmApiJWTExts-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		08C0FF11227FEEEF0078F5AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08C0FF3D227FEF6B0078F5AE /* Main.storyboard in Resources */,
-				08F57F2E22AA225400DF39F8 /* UserTableCell.xib in Resources */,
-				08C0FF3C227FEF6B0078F5AE /* LaunchScreen.storyboard in Resources */,
-				08C0FF3B227FEF6B0078F5AE /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8111E3119A95C8B0040E7D1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B3D8A7122E61E2A00C91515 /* LHCoreRxRealmApiJWTExts.podspec in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8111E3C19A95C8B0040E7D1 /* Resources */ = {
+		9F0BE4211CF8DB4B00919282 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -543,308 +230,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2B2C7241FB0DD7A6D7C40761 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LHCoreRxRealmApiJWTExts iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4CCB20801D45564D00C64D5B /* Cleanup Whitespace */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Cleanup Whitespace";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\ndirectories=(Example Source Tests)\n\nfor directory in \"${directories[@]}\"\ndo\n    echo \"Cleaning whitespace in directory: $directory\"\n    find $directory -iregex '.*\\.swift' -exec sed -E -i '' -e 's/[[:blank:]]*$//' {} \\;\ndone\n";
-		};
-		5E1C713B36A76C05F19FA1DF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LHCoreRxRealmApiJWTExts iOS Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72DC0E61847901D80D8975D3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS-Example/Pods-LHCoreRxRealmApiJWTExts iOS-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DFAAD2733CA9B09F32FE76D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LHCoreRxRealmApiJWTExts iOS-Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C54AA0F13E9257A46BBCB10E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS Tests/Pods-LHCoreRxRealmApiJWTExts iOS Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS Tests/Pods-LHCoreRxRealmApiJWTExts iOS Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LHCoreRxRealmApiJWTExts iOS Tests/Pods-LHCoreRxRealmApiJWTExts iOS Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		08C0FF0F227FEEEF0078F5AE /* Sources */ = {
+		9F0BE41E1CF8DB4B00919282 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08F57F1C22A9FC5100DF39F8 /* SampleTableCell.swift in Sources */,
-				08C0FF16227FEEEF0078F5AE /* AppDelegate.swift in Sources */,
-				0831F69922B8924A00F26449 /* ListViewController.swift in Sources */,
-				08C0558F22BCD8EA00FBB84D /* SampleFormViewModel.swift in Sources */,
-				0827D08B22ADF9F9000A7984 /* ExtenListViewModel.swift in Sources */,
-				081424BE22AF3A9700AF6892 /* UserDetailModel.swift in Sources */,
-				08F57F2722AA165F00DF39F8 /* RxListViewController.swift in Sources */,
-				08F57F2A22AA168000DF39F8 /* UserModel.swift in Sources */,
-				08F57F2822AA165F00DF39F8 /* MainViewController.swift in Sources */,
-				0827D08F22AE357B000A7984 /* SampleDetailViewModel.swift in Sources */,
-				08F57F2C22AA223600DF39F8 /* UserTableCell.swift in Sources */,
-				0827D09122AE41E7000A7984 /* RxDetailViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8111E2E19A95C8B0040E7D1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				081AD41122E6EEB20091BB8C /* JWTDecode.swift in Sources */,
-				084320D822E69E9E0023FD3F /* LHCoreListViewDataSource.swift in Sources */,
-				084320DA22E69E9E0023FD3F /* LHCoreRxKeyboard.swift in Sources */,
-				081AD41022E6EEB20091BB8C /* JWTBase64.swift in Sources */,
-				084320DC22E69E9E0023FD3F /* LHCoreRxExtensions.swift in Sources */,
-				084320D922E69E9E0023FD3F /* LHCoreListFormViewModel.swift in Sources */,
-				084A3AF522A7A453003866D4 /* LHCoreRxRealm.swift in Sources */,
-				081AD40B22E6EEB20091BB8C /* JWTEncode.swift in Sources */,
-				081AD40E22E6EEB20091BB8C /* JWTHMAC.swift in Sources */,
-				084320DE22E69E9E0023FD3F /* LHCoreRxListViewModel.swift in Sources */,
-				0831F69F22B8D14200F26449 /* LHCoreRxRealmListViewModel.swift in Sources */,
-				081AD40922E6EEB20091BB8C /* JWTClaims.swift in Sources */,
-				081AD40C22E6EEB20091BB8C /* JWTJOSEHeader.swift in Sources */,
-				084320DB22E69E9E0023FD3F /* LHCoreRxAPIService.swift in Sources */,
-				081AD40A22E6EEB20091BB8C /* LHSwiftJWT.swift in Sources */,
-				084320DD22E69E9E0023FD3F /* LHCoreRxApiWithJWT.swift in Sources */,
-				081AD40D22E6EEB20091BB8C /* JWTClaimSet.swift in Sources */,
-				081AD40F22E6EEB20091BB8C /* JWTHMACCommonCrypto.swift in Sources */,
-				0831F69D22B8D14200F26449 /* LHCoreRxRealmDetailViewModel.swift in Sources */,
-				4BB7E1F7231039C2004A3BFD /* LHCoreRxUnrealm.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8111E3A19A95C8B0040E7D1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				083BD8B4227FE43A000C215D /* LHCoreRxRealmViewModel_UTests.swift in Sources */,
+				4BC4CBEC2310FCF800E83632 /* LHCoreRxRealmDetailViewModel.swift in Sources */,
+				4BC4CBEB2310FCF800E83632 /* LHCoreRxRealm.swift in Sources */,
+				4BC4CC082310FD7D00E83632 /* JWTBase64.swift in Sources */,
+				4BC4CC0E2310FD7D00E83632 /* JWTClaimSet.swift in Sources */,
+				4BC4CC0C2310FD7D00E83632 /* LHSwiftJWT.swift in Sources */,
+				4BC4CBE92310FCF800E83632 /* LHCoreRxRealmListViewModel.swift in Sources */,
+				4BC4CBFA2310FD4D00E83632 /* LHCoreRxAPIService.swift in Sources */,
+				4BC4CC0B2310FD7D00E83632 /* JWTJOSEHeader.swift in Sources */,
+				4BC4CC062310FD7D00E83632 /* JWTHMACCommonCrypto.swift in Sources */,
+				4BC4CC072310FD7D00E83632 /* JWTEncode.swift in Sources */,
+				4BC4CBEA2310FCF800E83632 /* LHCoreUnrealm.swift in Sources */,
+				4BC4CC0A2310FD7D00E83632 /* JWTClaims.swift in Sources */,
+				4BC4CBF92310FD4D00E83632 /* LHCoreListViewDataSource.swift in Sources */,
+				4BC4CC0D2310FD7D00E83632 /* JWTHMAC.swift in Sources */,
+				4BC4CBF72310FD4D00E83632 /* LHCoreRxApiWithJWT.swift in Sources */,
+				4BC4CBF82310FD4D00E83632 /* LHCoreRxListViewModel.swift in Sources */,
+				4BC4CBFB2310FD4D00E83632 /* LHCoreRxExtensions.swift in Sources */,
+				4BC4CBF52310FD4D00E83632 /* LHCoreRxKeyboard.swift in Sources */,
+				4BC4CC092310FD7D00E83632 /* JWTDecode.swift in Sources */,
+				4BC4CBF62310FD4D00E83632 /* LHCoreListFormViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		081A1A08229E6DA00062D495 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8111E3219A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS */;
-			targetProxy = 081A1A07229E6DA00062D495 /* PBXContainerItemProxy */;
-		};
-		08C0FF40227FEF950078F5AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 08C0FF12227FEEEF0078F5AE /* Example */;
-			targetProxy = 08C0FF3F227FEF950078F5AE /* PBXContainerItemProxy */;
-		};
-		F8111E6619A967880040E7D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8111E3219A95C8B0040E7D1 /* LHCoreRxRealmApiJWTExts iOS */;
-			targetProxy = F8111E6519A967880040E7D1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		08C0FF33227FEF6B0078F5AE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08C0FF34227FEF6B0078F5AE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		08C0FF35227FEF6B0078F5AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08C0FF36227FEF6B0078F5AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		08C0FF23227FEEF00078F5AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4012702B3AC783CB1FA5CBD2 /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/Example/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = laohac.vn.LHCoreRxRealmExtensions.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		08C0FF24227FEEF00078F5AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68F3DC2536BFFE5E5C4B342C /* Pods-LHCoreRxRealmApiJWTExts iOS-Example.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/Example/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = laohac.vn.LHCoreRxRealmExtensions.Example;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		4CCB207D1D45563900C64D5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4CCB207E1D45563900C64D5B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		F8111E4419A95C8B0040E7D1 /* Debug */ = {
+		9F0BE4291CF8DB4B00919282 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
-				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -864,7 +290,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -878,43 +304,33 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACOSX_DEPLOYMENT_TARGET = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "altplus.vn.datnm.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = LHCoreRxRealmExtensions;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = "";
 				VERSIONING_SYSTEM = "apple-generic";
-				WATCHOS_DEPLOYMENT_TARGET = "";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		F8111E4519A95C8B0040E7D1 /* Release */ = {
+		9F0BE42A1CF8DB4B00919282 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
-				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -934,8 +350,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -948,175 +364,99 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACOSX_DEPLOYMENT_TARGET = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "altplus.vn.datnm.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = LHCoreRxRealmExtensions;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = "";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
-				WATCHOS_DEPLOYMENT_TARGET = "";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		F8111E4719A95C8B0040E7D1 /* Debug */ = {
+		9F0BE42C1CF8DB4B00919282 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE494D8C3225BDDC25629881 /* Pods-LHCoreRxRealmApiJWTExts iOS.debug.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/SupportingFiles/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
+				FRAMEWORK_SEARCH_PATHS = (
+					../,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = laohac.vn.LHCoreRxRealmExtensions;
-				PRODUCT_NAME = LHCoreRxRealmApiJWTExts;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F8111E4819A95C8B0040E7D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 208FC8AA5447DD40818C6079 /* Pods-LHCoreRxRealmApiJWTExts iOS.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "LHCoreRxRealmApiJWTExts-iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = laohac.vn.LHCoreRxRealmExtensions;
-				PRODUCT_NAME = LHCoreRxRealmApiJWTExts;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		F8111E4A19A95C8B0040E7D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B7D166EB7C974CF7D91CA0C /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "altplus.vn.datnm.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RxSwiftCommunity.RxRealm;
+				PRODUCT_NAME = LHCoreRxRealmApiJWTExts;
+				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
-		F8111E4B19A95C8B0040E7D1 /* Release */ = {
+		9F0BE42D1CF8DB4B00919282 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7925165056A4A2CEA9681C2 /* Pods-LHCoreRxRealmApiJWTExts iOS Tests.release.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				INFOPLIST_FILE = Tests/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					../,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "LHCoreRxRealmApiJWTExts-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "altplus.vn.datnm.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RxSwiftCommunity.RxRealm;
+				PRODUCT_NAME = LHCoreRxRealmApiJWTExts;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08C0FF22227FEEF00078F5AE /* Build configuration list for PBXNativeTarget "Example" */ = {
+		9F0BE41D1CF8DB4B00919282 /* Build configuration list for PBXProject "LHCoreRxRealmApiJWTExts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08C0FF23227FEEF00078F5AE /* Debug */,
-				08C0FF24227FEEF00078F5AE /* Release */,
+				9F0BE4291CF8DB4B00919282 /* Debug */,
+				9F0BE42A1CF8DB4B00919282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CCB207F1D45563900C64D5B /* Build configuration list for PBXAggregateTarget "Cleanup Whitespace" */ = {
+		9F0BE42B1CF8DB4B00919282 /* Build configuration list for PBXNativeTarget "LHCoreRxRealmApiJWTExts-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4CCB207D1D45563900C64D5B /* Debug */,
-				4CCB207E1D45563900C64D5B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8111E2D19A95C8B0040E7D1 /* Build configuration list for PBXProject "LHCoreRxRealmApiJWTExts" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8111E4419A95C8B0040E7D1 /* Debug */,
-				F8111E4519A95C8B0040E7D1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8111E4619A95C8B0040E7D1 /* Build configuration list for PBXNativeTarget "LHCoreRxRealmApiJWTExts iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8111E4719A95C8B0040E7D1 /* Debug */,
-				F8111E4819A95C8B0040E7D1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8111E4919A95C8B0040E7D1 /* Build configuration list for PBXNativeTarget "LHCoreRxRealmApiJWTExts iOS Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8111E4A19A95C8B0040E7D1 /* Debug */,
-				F8111E4B19A95C8B0040E7D1 /* Release */,
+				9F0BE42C1CF8DB4B00919282 /* Debug */,
+				9F0BE42D1CF8DB4B00919282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F8111E2A19A95C8B0040E7D1 /* Project object */;
+	rootObject = 9F0BE41A1CF8DB4B00919282 /* Project object */;
 }
