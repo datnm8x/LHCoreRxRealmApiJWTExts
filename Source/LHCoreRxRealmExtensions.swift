@@ -68,6 +68,20 @@ public extension Realm {
         }
     }
     
+    class func add(_ obj: Object, update: UpdatePolicy = .error, moreWrite: ((_ realm: Realm) -> Void)? = nil) {
+        self.tryWrite { (realm) in
+            realm.add(obj, update: update)
+            moreWrite?(realm)
+        }
+    }
+    
+    class func add<S: Sequence>(_ objects: S, update: UpdatePolicy = .error, moreWrite: ((_ realm: Realm) -> Void)? = nil) where S.Iterator.Element: Object {
+        self.tryWrite { (realm) in
+            realm.add(objects, update: update)
+            moreWrite?(realm)
+        }
+    }
+    
     @discardableResult
     class func observableObject<T: Object>(_ type: T.Type, forId: Int64) -> RxSwift.Observable<([T], RxRealm.RealmChangeset?)> {
         let realm = try! Realm()
@@ -91,13 +105,17 @@ public extension Realm {
 
 public final class LHCoreRealmConfig: NSObject {
     // you need increase this in the each relase, if you change realm models object db
-    public static var schemaVersion: UInt64 = 1
+    static var schemaVersion: UInt64 = 1
     
-    public static func setDefaultConfigurationMigration(_ migrationBlock: MigrationBlock? = nil) {
+    public static func setDefaultConfigurationMigration(schemaVersion: UInt64? = nil, _ migrationBlock: MigrationBlock? = nil) {
+        if let newSchemaVersion = schemaVersion {
+            self.schemaVersion = newSchemaVersion
+        }
+        
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: schemaVersion,
+            schemaVersion: self.schemaVersion,
             
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above

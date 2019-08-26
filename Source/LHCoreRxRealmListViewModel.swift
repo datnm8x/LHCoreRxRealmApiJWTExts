@@ -15,6 +15,10 @@ import RxCocoa
 
 open class LHCoreObject: Object {
     open var itemId: Int64 { return LHCoreApiDefault.nonItemId }
+    
+    open func getAPIParams() -> LHCoreApiPayload {
+        return LHCoreApiPayload()
+    }
 }
 
 public struct LHCoreRxRealmListOption {
@@ -41,8 +45,8 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
     public typealias TableCellBuilder = (_ item: T, _ tblView: UITableView, _ at: IndexPath) -> UITableViewCell?
     public typealias CollectionCellBuilder = (_ item: T, _ colView: UICollectionView, _ at: IndexPath) -> UICollectionViewCell?
     
-    public typealias RxFetchFunction = (_ pagingParam: LHCoreListModel.PagingParam<T>) -> Observable<LHCoreListModel.ResultState<T>>
-    public typealias RxSearchFunction = (_ pagingParam: LHCoreListModel.PagingParam<T>, _ keyword: String) -> Observable<LHCoreListModel.ResultState<T>>
+    public typealias RxFetchFunction = (_ pagingParam: LHCoreListModel.PagingParam) -> Observable<LHCoreListModel.ResultState<T>>
+    public typealias RxSearchFunction = (_ pagingParam: LHCoreListModel.PagingParam, _ keyword: String) -> Observable<LHCoreListModel.ResultState<T>>
     
     public let fetchFunction: RxFetchFunction
     public let searchFunction: RxSearchFunction?
@@ -50,7 +54,7 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
     public let dataSource: LHCoreListViewDataSource<T> = LHCoreListViewDataSource<T>()
     internal var listType: LHCoreListModel.ViewType = .table
     internal var option: LHCoreRxRealmListOption = LHCoreRxRealmListOption()
-    internal var pagingParam: LHCoreListModel.PagingParam<T> = LHCoreListModel.PagingParam<T>()
+    internal var pagingParam: LHCoreListModel.PagingParam = LHCoreListModel.PagingParam()
     
     public let requestState = BehaviorRelay<LHCoreListModel.RequestState>(value: .none)
     public let didRequestHandler = BehaviorRelay<(LHCoreListModel.RequestType, LHCoreListModel.ResultState<T>)>(value: (.refresh, LHCoreListModel.ResultState<T>.successInitial))
@@ -95,7 +99,7 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
             return totalcount.value > resultCount
             
         case .byLastItem:
-            return pagingParam.lastItemId != nil
+            return pagingParam.lastItemId >= 0
         }
     }
     
@@ -121,21 +125,22 @@ open class LHCoreRxRealmListViewModel<T: LHCoreObject> {
         self.fetchFunction = fetchFunc
         self.searchFunction = searchFunc
         
-        do {
+        do {            
             let realm = try Realm()
             let rlmResult = option.hasFilter ?
-                realm.objects(T.self).sorted(by: option.sortBy) :
-                realm.objects(T.self).filter(option.filterTrimmed).sorted(by: option.sortBy)
+                realm.objects(T.self).filter(option.filterTrimmed).sorted(by: option.sortBy) :
+                realm.objects(T.self).sorted(by: option.sortBy)
             
             let countResult = rlmResult.count
             self.totalcount.accept(countResult)
             pagingParam.pageSize = option.pageSize
             pagingParam.nextPage = option.startPage
-            pagingParam.lastItem = nil
+            pagingParam.apiParams = nil
             pagingParam.lastItemId = 0
             
             self.realmResults = rlmResult
             // resultsNotification
+            
             resultsNotificationToken = rlmResult.observe { [weak self] (rlmCollectionChange) in
                 self?.resultsChange.accept(rlmCollectionChange)
             }
@@ -393,7 +398,7 @@ extension LHCoreRxRealmListViewModel {
         
         // proccess page index
         if requestType == .refresh {
-            pagingParam.lastItem = nil
+            pagingParam.apiParams = nil
             pagingParam.lastItemId = 0
             pagingParam.nextPage = option.startPage
         }
@@ -438,17 +443,17 @@ extension LHCoreRxRealmListViewModel {
                     switch result {
                     case .success(let listResult):
                         if requestType == .refresh {
-                            self.pagingParam.lastItem = nil
+                            self.pagingParam.apiParams = nil
                             self.pagingParam.lastItemId = 0
-                            
                         }
                         self.pagingParam.nextPage += 1
+                        
                         if self.option.pagingType == .byLastItem {
                             if listResult.items.count < self.option.pageSize {
-                                self.pagingParam.lastItem = nil
+                                self.pagingParam.apiParams = nil
                                 self.pagingParam.lastItemId = LHCoreApiDefault.nonItemId
                             } else {
-                                self.pagingParam.lastItem = self.items.last
+                                self.pagingParam.apiParams = self.items.last?.getAPIParams()
                                 self.pagingParam.lastItemId = self.items.last?.itemId ?? self.option.startPage
                             }
                         }
